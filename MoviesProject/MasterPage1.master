@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage1.master.cs" Inherits="MasterPage1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <script src="/menuscript.js" language="javascript" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="/menustyle.css" media="screen, print" />
+        <title></title>
+        <script type="text/javascript">
+            function HomeButtonClick() {
+                parent.location = "/Default.aspx";
+            }
+            function Top10ButtonClick() {
+                parent.location = "/Pages/Top10.aspx";
+            }
+            function AboutUsButtonClick() {
+                parent.location = "/Pages/About Us.aspx";
+            }
+            function ImdbButtonClick() {
+                parent.location = "http://www.imdb.com/";
+            }
+        </script>
+    </head>
+    <body style="background-image:url(/Pictures/Other/Backgrounds/Background1.png); background-repeat:repeat-x;">
+        <form id="form1" runat="server">
+            <div>
+                <center>
+                    <table border="1" width="80%">
+                        <tr>
+                            <td colspan="2">
+                                <table border="0" width="100%">
+                                    <tr>
+                                        <td width="25%">
+                                            <img id="HomeImg" src="/Pictures/Other/Buttons/HomeButton.png"
+                                             onmouseover="this.src = '/Pictures/Other/Buttons/HomeButtonMouseOver.png';"
+                                             onmouseout="this.src = '/Pictures/Other/Buttons/HomeButton.png';"
+                                             onclick="HomeButtonClick()" alt="Home Page" />
+                                        </td>
+                                        <td width="25%">
+                                            <img id="Top10Img" src="/Pictures/Other/Buttons/Top10Button.png"
+                                             onmouseover="this.src='/Pictures/Other/Buttons/Top10ButtonMouseOver.png';"
+                                             onmouseout="this.src='/Pictures/Other/Buttons/Top10Button.png';"
+                                             onclick="Top10ButtonClick()" alt="Top 10" />
+                                        </td>
+                                        <td width="25%">
+                                            <img id="AboutUsImg" src="/Pictures/Other/Buttons/AboutUsButton.png"
+                                             onmouseover="this.src='/Pictures/Other/Buttons/AboutUsButtonMouseOver.png';"
+                                             onmouseout="this.src='/Pictures/Other/Buttons/AboutUsButton.png';"
+                                             onclick="AboutUsButtonClick()" alt="About Us" />
+                                        </td>
+                                        <td width="25%">
+                                            <font size="5">Search:</font>
+                                            <asp:TextBox ID="SearchTextBox" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" align="left" width="13%">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <a href="/Pages/AllMovies.aspx" onmouseover="setOverImg('1');overSub=true;showSubMenu('submenu1','button1');" onmouseout="setOutImg('1');overSub=false;setTimeout('hideSubMenu(\'submenu1\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button1up.png" border="0" id="button1" vspace="1" hspace="1" alt="All Movies" /></a><br />
+                                            <a href="/Pages/AllActors.aspx" onmouseover="setOverImg('2');overSub=true;showSubMenu('submenu2','button2');" onmouseout="setOutImg('2');overSub=false;setTimeout('hideSubMenu(\'submenu2\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button2up.png" border="0" id="button2" vspace="1" hspace="1" alt="All Actors" /></a><br />
+                                            <a href="/Pages/AllDirectors.aspx" onmouseover="setOverImg('3');overSub=true;showSubMenu('submenu3','button3');" onmouseout="setOutImg('3');overSub=false;setTimeout('hideSubMenu(\'submenu3\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button3up.png" border="0" id="button3" vspace="1" hspace="1" alt="All Directors" /></a><br />
+                                            <a href="/Pages/AllWriters.aspx" onmouseover="setOverImg('4');overSub=true;showSubMenu('submenu4','button4');" onmouseout="setOutImg('4');overSub=false;setTimeout('hideSubMenu(\'submenu4\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button4up.png" border="0" id="button4" vspace="1" hspace="1" alt="All Writers" /></a><br />
+                                            <a href="/Pages/AllGenres.aspx" onmouseover="setOverImg('5');overSub=true;showSubMenu('submenu5','button5');" onmouseout="setOutImg('5');overSub=false;setTimeout('hideSubMenu(\'submenu5\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button5up.png" border="0" id="button5" vspace="1" hspace="1" alt="All Genres" /></a><br />
+                                            <a href="/Pages/AllAwards.aspx" onmouseover="setOverImg('6');overSub=true;showSubMenu('submenu6','button6');" onmouseout="setOutImg('6');overSub=false;setTimeout('hideSubMenu(\'submenu6\')',delay);" target=""><img src="/Pictures/Other/Buttons/Vertical Menu/button6up.png" border="0" id="button6" vspace="1" hspace="1" alt="All Awards" /></a><br />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <center>
+                                    <img id="ImdbImg" src="/Pictures/Other/Buttons/ImdbButtonUp.png"
+                                    onmouseover="this.src='/Pictures/Other/Buttons/ImdbButtonOver.png';"
+                                    onmouseout="this.src='/Pictures/Other/Buttons/ImdbButtonUp.png';"
+                                    onclick="ImdbButtonClick()" alt="http://www.imdb.com/" />
+                                    <br />
+                                    <asp:HyperLink ID="HyperLink1" runat="server"
+                                     NavigateUrl="/Pages/Login.aspx?what=login">Login</asp:HyperLink>
+                                    <asp:Label ID="Label1" runat="server"> / </asp:Label>
+                                    <asp:HyperLink ID="HyperLink2" runat="server"
+                                     NavigateUrl="/Pages/Login.aspx?what=logout">Logout</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </center>
+                            </td>
+                            <td align="left" valign="top">
+                                <%--<center>--%>
+                                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                <%--</center>--%>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:Label ID="Label2" runat="server" ForeColor="Red" Visible="false">Admin Mode</asp:Label>
+                </center>
+            </div>
+        </form>
+    </body>
+</html>
